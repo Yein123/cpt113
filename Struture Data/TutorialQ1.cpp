@@ -25,5 +25,12 @@ int main(){
     cin >> s.semester;
     cout << "Enter your CGPA: ";
     cin >> s.cgpa;
+
+    cout << "\n\nName: " << s.name << endl;
+    cout << "ID: " << s.id << endl;
+    cout << "Desasiswa: " << s.desasiswa << endl;
+    cout << "Year: " << s.year << endl;
+    cout << "Semester: " << s.semester << endl;
+    cout << "CGPA: " << s.cgpa << endl;
     return 0;
 }
