@@ -19,6 +19,7 @@ void displayMenu() {
 
 void addSpeaker(Speaker* speakers, int& count) {
     if (count > 10) {
+        // Create a new array and copy the existing speakers to it
         Speaker* newSpeakers = new Speaker[count + 1];
         for (int i = 0; i < count; i++) {
             newSpeakers[i] = speakers[i];
@@ -111,6 +112,8 @@ int main() {
 
         switch (choice) {
             case 1:
+                // can directly pass with pointer variable (speakers)
+                // count is used to keep track of the number of speakers
                 addSpeaker(speakers, count);
                 break;
             case 2:

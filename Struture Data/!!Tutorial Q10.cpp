@@ -11,6 +11,10 @@ struct Salaried {
     double Bonus;
 };
 
+
+/* Union Definition: The union Worker can store either an HourlyPaid or a Salaried worker.
+User Input: The main function prompts the user to enter whether the worker is hourly paid or salaried.
+Conditional Handling: Based on the user's choice, the appropriate member of the union is accessed and used to store and display the worker's details.*/
 union Worker {
     HourlyPaid hourlyWorker;
     Salaried salariedWorker;

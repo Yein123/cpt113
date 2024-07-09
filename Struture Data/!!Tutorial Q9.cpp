@@ -11,6 +11,7 @@ struct DateTime {
     int seconds;
 };
 
+//can add on data validation here
 void setDetail(DateTime& date) {
     cout << "Year: ";
     cin >> date.year;
@@ -27,7 +28,41 @@ void setDetail(DateTime& date) {
 }
 
 DateTime earlierDate(DateTime date1, DateTime date2) {
-    // Existing code for earlierDate function
+    if (date1.year < date2.year) {
+        return date1;
+    } else if (date1.year > date2.year) {
+        return date2;
+    } else {
+        if (date1.month < date2.month) {
+            return date1;
+        } else if (date1.month > date2.month) {
+            return date2;
+        } else {
+            if (date1.date < date2.date) {
+                return date1;
+            } else if (date1.date > date2.date) {
+                return date2;
+            } else {
+                if (date1.hours < date2.hours) {
+                    return date1;
+                } else if (date1.hours > date2.hours) {
+                    return date2;
+                } else {
+                    if (date1.minutes < date2.minutes) {
+                        return date1;
+                    } else if (date1.minutes > date2.minutes) {
+                        return date2;
+                    } else {
+                        if (date1.seconds < date2.seconds) {
+                            return date1;
+                        } else {
+                            return date2;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 int main() {
