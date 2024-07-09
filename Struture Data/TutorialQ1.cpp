@@ -10,32 +10,40 @@ struct Student{
     double cgpa;
 };
 
+void getData(Student &s){
+    cout << "Enter your name: ";
+    getline(cin,s.name);
+    cout << "Enter your ID: ";
+    //cin.ignore();
+    cin >> s.id;
+    cout << "Enter your Desasiswa: ";
+    cin >> s.desasiswa;
+    cout << "Enter your year: ";
+    cin >> s.year;
+    cout << "Enter your semester: ";
+    cin >> s.semester;
+    cout << "Enter your CGPA: ";
+    cin >> s.cgpa;
+    cin.ignore();
+}
+
+void display(const Student &s){
+    cout << "Name: " << s.name << endl;
+    cout << "ID: " << s.id << endl;
+    cout << "Desasiswa: " << s.desasiswa << endl;
+    cout << "Year: " << s.year << endl;
+    cout << "Semester: " << s.semester << endl;
+    cout << "CGPA: " << s.cgpa << endl;
+}
+
 int main(){
     Student stuList[5]; //array of structure
 
     for(int i=0; i<5; i++){
-        cout << "Enter your name: ";
-        getline(cin,stuList[i].name);
-        cout << "Enter your ID: ";
-        cin.ignore();
-        cin >> stuList[i].id;
-        cout << "Enter your Desasiswa: ";
-        cin >> stuList[i].desasiswa;
-        cout << "Enter your year: ";
-        cin >> stuList[i].year;
-        cout << "Enter your semester: ";
-        cin >> stuList[i].semester;
-        cout << "Enter your CGPA: ";
-        cin >> stuList[i].cgpa;
-        cin.ignore();
+        getData(stuList[i]);
     }
     for(int i =0; i<5; i++){
-        cout << "\n\nName: " << stuList[i].name << endl;
-        cout << "ID: " << stuList[i].id << endl;
-        cout << "Desasiswa: " << stuList[i].desasiswa << endl;
-        cout << "Year: " << stuList[i].year << endl;
-        cout << "Semester: " << stuList[i].semester << endl;
-        cout << "CGPA: " << stuList[i].cgpa << endl;
+        display(stuList[i]);
     }
     return 0;
 }
